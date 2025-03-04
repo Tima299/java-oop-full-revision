@@ -1,4 +1,4 @@
-package constructors;
+package constructors.nineOne;
 
 public class Rectangle {
     public double width;
