@@ -3,23 +3,16 @@ package constructors.nineSeven;
 import java.util.Date;
 
 public class Account {
-    private int id;
-    private double balance;
-    private double annualInterestRate;
-    private java.util.Date dateCreated;
+    private int id = 0;
+    private double balance = 0, annualInterestRate = 0;
+    private final Date dateCreated = new Date();
 
     public Account() {
-        this.id = 0;
-        this.balance = 0;
-        this.annualInterestRate = 0;
-        dateCreated = new java.util.Date();
     }
 
     public Account(int id, double balance) {
         this.id = id;
         this.balance = balance;
-        this.annualInterestRate = 0;
-        this.dateCreated = new java.util.Date();
     }
 
     public int getId() {
@@ -50,18 +43,18 @@ public class Account {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
-    }
     public double getMonthlyInterestRate() {
-        return annualInterestRate / 12 /100;
+        return annualInterestRate / 1200;
     }
+
     public double getMonthlyInterest() {
         return balance * getMonthlyInterestRate();
     }
+
     public void withdraw(double amount) {
         balance -= amount;
     }
+
     public void deposit(double amount) {
         balance += amount;
     }
