@@ -3,17 +3,22 @@ package constructors.nineOne;
 public class Rectangle {
     public double width;
     public double height;
+
     public Rectangle() {
-        System.out.println("No args constructor is called");
+        this.width = 1;
+        this.height = 1;
     }
+
     public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
-    public double getArea(double width, double height) {
+
+    public double getArea() {
         return (width * height);
     }
-    public double getPerimeter(double width, double height) {
+
+    public double getPerimeter() {
         return 2 * (height + width);
     }
 }
