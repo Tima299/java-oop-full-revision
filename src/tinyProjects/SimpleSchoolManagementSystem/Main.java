@@ -1,4 +1,4 @@
-package constructors.SimpleSchoolManagementSystem;
+package tinyProjects.SimpleSchoolManagementSystem;
 
 public class Main {
     public static void main(String[] args) {

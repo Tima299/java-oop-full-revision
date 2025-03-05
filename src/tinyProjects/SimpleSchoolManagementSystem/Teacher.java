@@ -1,4 +1,4 @@
-package constructors.SimpleSchoolManagementSystem;
+package tinyProjects.SimpleSchoolManagementSystem;
 
 public class Teacher {
     private int id;
