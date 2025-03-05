@@ -1,4 +1,4 @@
-package tinyProjects.SimpleSchoolManagementSystem;
+package tinyProjects.simpleSchoolManagementSystem;
 
 public class Student {
     private int id;

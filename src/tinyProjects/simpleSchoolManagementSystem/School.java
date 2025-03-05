@@ -1,4 +1,4 @@
-package tinyProjects.SimpleSchoolManagementSystem;
+package tinyProjects.simpleSchoolManagementSystem;
 
 import java.util.Arrays;
 
