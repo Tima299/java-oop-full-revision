@@ -20,5 +20,27 @@ public class TestMain {
         System.out.println(l2.getGradient());
         System.out.println(l2);
 
+        l2.setBeginX(3);
+        l2.setBeginY(3);
+        l2.setEndX(4);
+        l2.setEndY(4);
+        System.out.println(l2.getLength());
+        System.out.println(l2.getGradient());
+        System.out.println(l2);
+
+        l2.setBegin(p1);
+        l2.setEnd(p2);
+        System.out.println(l2.getLength());
+        System.out.println(l2.getGradient());
+        System.out.println(l2);
+
+
+        //unused methods
+        System.out.println(p1.getXY());
+        p1.setXY(5, 6);
+        System.out.println(p1);
+        System.out.println(p1.distance(5, 6));
+        System.out.println(p1.distance(p2));
+        System.out.println(p1.distance());
     }
 }
