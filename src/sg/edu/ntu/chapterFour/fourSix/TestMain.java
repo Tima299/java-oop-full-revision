@@ -30,6 +30,5 @@ public class TestMain {
 
         Animal animal1 = new Animal("Animal1");
         System.out.println(animal1);
-
     }
 }
