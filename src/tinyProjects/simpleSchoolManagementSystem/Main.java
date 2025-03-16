@@ -2,43 +2,39 @@ package tinyProjects.simpleSchoolManagementSystem;
 
 public class Main {
     public static void main(String[] args) {
-        // Create School
-        School school = new School(new Teacher[0], new Student[0]);
-
-        // Create Teachers with original names
-        Teacher teacher1 = new Teacher(1, "Naseer", "Abdulraheem", 15000, school);
-        Teacher teacher2 = new Teacher(2, "Alessandro", "Agostini", 5500, school);
-
-        // Create Students with original names
-        Student student1 = new Student(101, "Temur", "Eshboyev", 10, 3000, school);
-        Student student2 = new Student(102, "Suxrob", "Ergashev", 11, 3500, school);
-
-        // Add Teachers and Students to the School
+        School school = new School();
+        Teacher teacher1 = new Teacher(1, "Temur", "Eshboyev", 2800);
+        Teacher teacher2 = new Teacher(2, "Suxrob", "Ergashev", 2700);
+        Teacher teacher3 = new Teacher(3, "Azizbek", "Fattoev", 6200);
+        Student student1 = new Student(1, "Naseer", "Abdulraheem", 12, 10000);
+        Student student2 = new Student(2, "Agostini", "Alessandro", 9, 8000);
+        Student student3 = new Student(3, "Ortiq", "Otajonov", 11, 1000);
         school.addTeacher(teacher1);
         school.addTeacher(teacher2);
+        school.addTeacher(teacher3);
         school.addStudent(student1);
         school.addStudent(student2);
+        school.addStudent(student3);
 
-        // Students pay fees
-        student1.pay(1000);
-        student2.pay(1500);
 
-        // Teachers receive salary
-        teacher1.receiveSalary(4000);
-        teacher2.receiveSalary(4500);
+        System.out.println("Earned money:   $" + school.getTotalMoneyEarned());
+        System.out.println("Spent money:   $" + school.getTotalMoneyEarned());
 
-        // Display details
-        System.out.println("School Teachers:");
-        for (Teacher teacher : school.getTeachers()) {
-            System.out.println(teacher);
-        }
+        student1.pay(5000);
+        System.out.println(student1.getName() + " remained fees:   $ " + student1.getRemainingFees());
 
-        System.out.println("\nSchool Students:");
-        for (Student student : school.getStudents()) {
-            System.out.println(student);
-        }
+        teacher1.receiveSalary(1000);
 
-        System.out.println("\nTotal Money Earned: " + school.getTotalMoneyEarned());
-        System.out.println("Total Money Spent: " + school.getTotalMoneySpent());
+        System.out.println("Earned money:  $ " + school.getTotalMoneyEarned());
+        System.out.println("Spent money:  $ " + school.getTotalMoneyEarned());
+        System.out.println();
+
+        student2.pay(6000);
+        System.out.println(student2.getName() + " remained fees:$ " + student2.getRemainingFees());
+
+        teacher2.receiveSalary(1200);
+
+        System.out.println("Earned money:  $ " + school.getTotalMoneyEarned());
+        System.out.println("Spent money:  $ " + school.getTotalMoneyEarned());
     }
 }

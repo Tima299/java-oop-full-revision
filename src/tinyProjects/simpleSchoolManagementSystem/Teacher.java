@@ -8,15 +8,16 @@ public class Teacher {
     private double salaryEarned;
     private School school;
 
-    public Teacher(int id, String firstName, String lastName, double salary, School school) {
+    public Teacher(int id, String firstName, String lastName, double salary) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
-        this.salaryEarned = 0;
+        this.salaryEarned = salary;
+    }
+    public void setSchool(School school) {
         this.school = school;
     }
-
     public int getId() {
         return id;
     }
@@ -51,7 +52,6 @@ public class Teacher {
 
     public void receiveSalary(double salary) {
         salaryEarned += salary;
-        school.updateTotalMoneySpent(salary);
     }
 
     @Override
@@ -62,6 +62,7 @@ public class Teacher {
                 ", lastName='" + lastName + '\'' +
                 ", salary=" + salary +
                 ", salaryEarned=" + salaryEarned +
+                ", school=" + school +
                 '}';
     }
 }

@@ -5,47 +5,42 @@ import java.util.Arrays;
 public class School {
     private Teacher[] teachers;
     private Student[] students;
-    private static double totalMoneyEarned;
-    private static double totalMoneySpent;
+    int studentCount = 0;
+    int teacherCount = 0;
 
-    public School(Teacher[] teachers, Student[] students) {
-        this.teachers = teachers;
-        this.students = students;
-        totalMoneyEarned = 0;
-        totalMoneySpent = 0;
+    public School() {
+        this.students =new Student[100];
+        this.teachers =new Teacher[100];
     }
 
     public Teacher[] getTeachers() {
         return teachers;
     }
 
-    public void addTeacher(Teacher teacher) {
-        teachers = Arrays.copyOf(teachers, teachers.length + 1);
-        teachers[teachers.length - 1] = teacher;
-    }
-
     public Student[] getStudents() {
         return students;
     }
 
-    public void addStudent(Student student) {
-        students = Arrays.copyOf(students, students.length + 1);
-        students[students.length - 1] = student;
-    }
-
     public double getTotalMoneyEarned() {
-        return totalMoneyEarned;
-    }
-
-    public static void updateTotalMoneyEarned(double moneyEarned) {
-        totalMoneyEarned += moneyEarned;
+        double total = 0;
+        for (int i = 0; i < studentCount; i++) {
+            total += students[i].getFeesPaid();
+        }
+        return total;
     }
 
     public double getTotalMoneySpent() {
-        return totalMoneySpent;
+        double spent = 0;
+        for (int i = 0; i < teacherCount; i++) {
+            spent += teachers[i].getSalaryEarned();
+        }
+        return spent;
     }
-
-    public static void updateTotalMoneySpent(double moneySpent) {
-        totalMoneySpent += moneySpent;
+    public void addTeacher(Teacher teacher) {
+        teachers[teacherCount++] = teacher;
+        teacher.setSchool(this);
+    }
+    public void addStudent(Student student) {
+        students[studentCount++] = student;
     }
 }

@@ -9,14 +9,13 @@ public class Student {
     private double feesTotal;
     private School school;
 
-    public Student(int id, String firstName, String lastName, int grade, double feesTotal, School school) {
+    public Student(int id, String firstName, String lastName, int grade, double feesTotal) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.grade = grade;
-        this.feesPaid = 0;
+        this.feesPaid = feesPaid;
         this.feesTotal = feesTotal;
-        this.school = school;
     }
 
     public int getId() {
@@ -42,6 +41,10 @@ public class Student {
     public double getFeesTotal() {
         return feesTotal;
     }
+    public double getRemainingFees(){
+        feesTotal-=feesPaid;
+        return feesTotal;
+    }
 
     public void setGrade(int grade) {
         this.grade = grade;
@@ -53,7 +56,6 @@ public class Student {
 
     public void pay(int fees) {
         feesPaid += fees;
-        school.updateTotalMoneyEarned(fees);
     }
 
     @Override
@@ -65,6 +67,7 @@ public class Student {
                 ", grade=" + grade +
                 ", feesPaid=" + feesPaid +
                 ", feesTotal=" + feesTotal +
+                ", school=" + school +
                 '}';
     }
 }
