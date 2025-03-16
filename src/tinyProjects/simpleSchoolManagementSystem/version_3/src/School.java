@@ -1,4 +1,5 @@
 package tinyProjects.simpleSchoolManagementSystem.version_3.src;
+
 import tinyProjects.simpleSchoolManagementSystem.version_3.handMadeArrayList.StudentList;
 import tinyProjects.simpleSchoolManagementSystem.version_3.handMadeArrayList.TeacherList;
 
@@ -43,6 +44,6 @@ public class School {
     }
 
     public void addStudent(Student student) {
-       students.add(student);
+        students.add(student);
     }
 }
