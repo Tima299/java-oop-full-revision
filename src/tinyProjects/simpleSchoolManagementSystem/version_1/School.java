@@ -1,6 +1,4 @@
-package tinyProjects.simpleSchoolManagementSystem;
-
-import java.util.Arrays;
+package tinyProjects.simpleSchoolManagementSystem.version_1;
 
 public class School {
     private Teacher[] teachers;
