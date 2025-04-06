@@ -6,7 +6,6 @@ import tinyProjects.todo_project.backend.utils.TodoUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class TodoServiceImpl implements TodoService {
     private List<Todo> todos = new ArrayList<>();
@@ -20,40 +19,49 @@ public class TodoServiceImpl implements TodoService {
 
     @Override
     public boolean delete(String todoId) {
-        Optional<Todo> todo = todos.stream()
-                .filter(t -> t.getId().equals(todoId))
-                .findFirst();
-
-        if (todo.isPresent()) {
-            todos.remove(todo.get());
-            return true;
+        // Using a traditional for loop to find the Todo by its ID
+        for (int i = 0; i < todos.size(); i++) {
+            Todo todo = todos.get(i);
+            if (todo.getId().equals(todoId)) {
+                todos.remove(i);
+                return true;
+            }
         }
         return false;
     }
 
     @Override
     public boolean update(TodoUpdateDTO dto) {
-        Optional<Todo> todo = todos.stream()
-                .filter(t -> t.getId().equals(dto.id()))
-                .findFirst();
-
-        if (todo.isPresent()) {
-            todo.get().setTitle(dto.title());
-            return true;
+        // Using a traditional for loop to find the Todo by its ID
+        for (int i = 0; i < todos.size(); i++) {
+            Todo todo = todos.get(i);
+            if (todo.getId().equals(dto.id())) {
+                todo.setTitle(dto.title());
+                return true;
+            }
         }
         return false;
     }
 
     @Override
     public Todo get(String todoId) {
-        return todos.stream()
-                .filter(t -> t.getId().equals(todoId))
-                .findFirst()
-                .orElse(null);
+        // Using a traditional for loop to find the Todo by its ID
+        for (int i = 0; i < todos.size(); i++) {
+            Todo todo = todos.get(i);
+            if (todo.getId().equals(todoId)) {
+                return todo;
+            }
+        }
+        return null;
     }
 
     @Override
     public Todo[] getAll() {
-        return todos.toArray(new Todo[0]);
+        // Converting the List to an array using a for loop
+        Todo[] todoArray = new Todo[todos.size()];
+        for (int i = 0; i < todos.size(); i++) {
+            todoArray[i] = todos.get(i);
+        }
+        return todoArray;
     }
 }
