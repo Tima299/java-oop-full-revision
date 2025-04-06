@@ -9,10 +9,10 @@ public class MainClass {
     public static void main(String[] args) throws Bank.InvalidCode {
         Bank b1 = new Bank("Uncle-$crooge");
         int c1 = b1.createAccount("John", 5, 500.5);
-        int c2 = b1.createAccount("Mary", 10,  1000.);
-        int c3 = b1.createAccount("John", 20,  800.);
+        int c2 = b1.createAccount("Mary", 10, 1000.);
+        int c3 = b1.createAccount("John", 20, 800.);
         int c4 = b1.createAccount("Paul", 30, 252.4);
-        Account a1=null, a3=null;
+        Account a1 = null, a3 = null;
 
         b1.deposit(c1, 7, 360.0);
         b1.deposit(c4, 35, 270.0);
@@ -21,7 +21,7 @@ public class MainClass {
         b1.withdraw(c3, 41, 158.0);
         b1.transfer(c1, c3, 8, 400.0);
         a1 = b1.getAccount(c1);
-        a3 = b1.deleteAccount(c3,50);
+        a3 = b1.deleteAccount(c3, 50);
 
         MyList accounts = b1.getAccounts();
 

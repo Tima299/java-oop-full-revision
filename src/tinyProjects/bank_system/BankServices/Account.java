@@ -34,7 +34,7 @@ public class Account {
 		MyList deposits = new MyArrayList();
 		for (int i = 0; i < movements.size(); i++) {
 			Object op = movements.get(i);
-			if (op instanceof Deposit) {
+		if (op instanceof Deposit) {
 				deposits.add(op);
 			}
 		}

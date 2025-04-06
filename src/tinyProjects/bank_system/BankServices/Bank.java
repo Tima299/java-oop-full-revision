@@ -114,7 +114,7 @@ public class Bank {
 	}
 
 
-	public class InvalidCode extends Throwable {
+public class InvalidCode extends Throwable {
 		public InvalidCode() {
 			super("Invalid Code is invalid");
 		}
